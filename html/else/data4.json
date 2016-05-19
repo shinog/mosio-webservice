@@ -1,0 +1,318 @@
+[
+    {
+        "Date": {
+            "date": "2015-10-02 18:04:00", 
+            "id": "6", 
+            "item_id": "30", 
+            "limitt": "10"
+        }, 
+        "Item": {
+            "adress": "出町柳", 
+            "check": "0", 
+            "content": "とにかくみんなで楽しく走ります。", 
+            "date": "2015-10-11 16:00:00", 
+            "id": "30", 
+            "lat": "35.029991", 
+            "limitt": "15", 
+            "lng": "135.772491", 
+            "photo": "141226body_start_running-640x359-82857.jpg", 
+            "photo_dir": "30", 
+            "price": "2000", 
+            "purpose": "stress", 
+            "title": "ランニングエクササイズ", 
+            "typee": "", 
+            "whom": "8"
+        }, 
+        "Purchase": [
+            {
+                "check": "0", 
+                "comment": "", 
+                "created": "2015-10-02 07:00:00", 
+                "fun": "0", 
+                "id": "65", 
+                "item_id": "6", 
+                "quantity": "5", 
+                "user_id": "12"
+            }, 
+            {
+                "check": "0", 
+                "comment": "", 
+                "created": "2015-10-03 00:00:00", 
+                "fun": "0", 
+                "id": "66", 
+                "item_id": "6", 
+                "quantity": "5", 
+                "user_id": "12"
+            }
+        ]
+    }, 
+    {
+        "Date": {
+            "date": "2015-10-11 18:05:00", 
+            "id": "7", 
+            "item_id": "30", 
+            "limitt": "15"
+        }, 
+        "Item": {
+            "adress": "出町柳", 
+            "check": "0", 
+            "content": "とにかくみんなで楽しく走ります。", 
+            "date": "2015-10-11 16:00:00", 
+            "id": "30", 
+            "lat": "35.029991", 
+            "limitt": "15", 
+            "lng": "135.772491", 
+            "photo": "141226body_start_running-640x359-82857.jpg", 
+            "photo_dir": "30", 
+            "price": "2000", 
+            "purpose": "stress", 
+            "title": "ランニングエクササイズ", 
+            "typee": "", 
+            "whom": "8"
+        }, 
+        "Purchase": [
+            {
+                "check": "0", 
+                "comment": "", 
+                "created": "2015-10-03 19:01:39", 
+                "fun": "0", 
+                "id": "67", 
+                "item_id": "7", 
+                "quantity": "1", 
+                "user_id": "36"
+            }
+        ]
+    }, 
+    {
+        "Date": {
+            "date": "2015-10-03 12:16:00", 
+            "id": "8", 
+            "item_id": "30", 
+            "limitt": "3"
+        }, 
+        "Item": {
+            "adress": "出町柳", 
+            "check": "0", 
+            "content": "とにかくみんなで楽しく走ります。", 
+            "date": "2015-10-11 16:00:00", 
+            "id": "30", 
+            "lat": "35.029991", 
+            "limitt": "15", 
+            "lng": "135.772491", 
+            "photo": "141226body_start_running-640x359-82857.jpg", 
+            "photo_dir": "30", 
+            "price": "2000", 
+            "purpose": "stress", 
+            "title": "ランニングエクササイズ", 
+            "typee": "", 
+            "whom": "8"
+        }, 
+        "Purchase": []
+    }, 
+    {
+        "Date": {
+            "date": "2015-11-06 09:09:00", 
+            "id": "12", 
+            "item_id": "30", 
+            "limitt": "5"
+        }, 
+        "Item": {
+            "adress": "出町柳", 
+            "check": "0", 
+            "content": "とにかくみんなで楽しく走ります。", 
+            "date": "2015-10-11 16:00:00", 
+            "id": "30", 
+            "lat": "35.029991", 
+            "limitt": "15", 
+            "lng": "135.772491", 
+            "photo": "141226body_start_running-640x359-82857.jpg", 
+            "photo_dir": "30", 
+            "price": "2000", 
+            "purpose": "stress", 
+            "title": "ランニングエクササイズ", 
+            "typee": "", 
+            "whom": "8"
+        }, 
+        "Purchase": [
+            {
+                "check": "1", 
+                "comment": "素晴らしい！", 
+                "created": "2015-06-12 18:52:08", 
+                "fun": "4", 
+                "id": "12", 
+                "item_id": "12", 
+                "quantity": "1", 
+                "user_id": "7"
+            }, 
+            {
+                "check": "1", 
+                "comment": "いいね！", 
+                "created": "2015-07-22 23:32:09", 
+                "fun": "5", 
+                "id": "14", 
+                "item_id": "12", 
+                "quantity": "2", 
+                "user_id": "8"
+            }, 
+            {
+                "check": "0", 
+                "comment": "", 
+                "created": "2015-09-11 05:27:37", 
+                "fun": "0", 
+                "id": "38", 
+                "item_id": "12", 
+                "quantity": "1", 
+                "user_id": "36"
+            }, 
+            {
+                "check": "0", 
+                "comment": "", 
+                "created": "2015-09-12 03:50:23", 
+                "fun": "0", 
+                "id": "39", 
+                "item_id": "12", 
+                "quantity": "1", 
+                "user_id": "36"
+            }, 
+            {
+                "check": "0", 
+                "comment": "", 
+                "created": "2015-09-28 14:36:06", 
+                "fun": "0", 
+                "id": "47", 
+                "item_id": "12", 
+                "quantity": "1", 
+                "user_id": "36"
+            }
+        ]
+    }, 
+    {
+        "Date": {
+            "date": "2015-10-27 09:10:00", 
+            "id": "13", 
+            "item_id": "30", 
+            "limitt": "10"
+        }, 
+        "Item": {
+            "adress": "出町柳", 
+            "check": "0", 
+            "content": "とにかくみんなで楽しく走ります。", 
+            "date": "2015-10-11 16:00:00", 
+            "id": "30", 
+            "lat": "35.029991", 
+            "limitt": "15", 
+            "lng": "135.772491", 
+            "photo": "141226body_start_running-640x359-82857.jpg", 
+            "photo_dir": "30", 
+            "price": "2000", 
+            "purpose": "stress", 
+            "title": "ランニングエクササイズ", 
+            "typee": "", 
+            "whom": "8"
+        }, 
+        "Purchase": [
+            {
+                "check": "1", 
+                "comment": "とにかく楽しかったです！おすすめ！", 
+                "created": "0000-00-00 00:00:00", 
+                "fun": "5", 
+                "id": "15", 
+                "item_id": "13", 
+                "quantity": "2", 
+                "user_id": "7"
+            }, 
+            {
+                "check": "1", 
+                "comment": "とても親切で良かったです！", 
+                "created": "2015-07-25 18:24:54", 
+                "fun": "4", 
+                "id": "17", 
+                "item_id": "13", 
+                "quantity": "1", 
+                "user_id": "15"
+            }, 
+            {
+                "check": "1", 
+                "comment": "", 
+                "created": "2015-08-08 09:31:35", 
+                "fun": "1", 
+                "id": "19", 
+                "item_id": "13", 
+                "quantity": "1", 
+                "user_id": "17"
+            }, 
+            {
+                "check": "0", 
+                "comment": "", 
+                "created": "2015-08-13 13:45:07", 
+                "fun": "0", 
+                "id": "23", 
+                "item_id": "13", 
+                "quantity": "1", 
+                "user_id": "30"
+            }, 
+            {
+                "check": "0", 
+                "comment": "", 
+                "created": "2015-09-07 11:43:11", 
+                "fun": "0", 
+                "id": "24", 
+                "item_id": "13", 
+                "quantity": "1", 
+                "user_id": "36"
+            }
+        ]
+    }, 
+    {
+        "Date": {
+            "date": "2015-10-27 16:18:00", 
+            "id": "15", 
+            "item_id": "30", 
+            "limitt": "10"
+        }, 
+        "Item": {
+            "adress": "出町柳", 
+            "check": "0", 
+            "content": "とにかくみんなで楽しく走ります。", 
+            "date": "2015-10-11 16:00:00", 
+            "id": "30", 
+            "lat": "35.029991", 
+            "limitt": "15", 
+            "lng": "135.772491", 
+            "photo": "141226body_start_running-640x359-82857.jpg", 
+            "photo_dir": "30", 
+            "price": "2000", 
+            "purpose": "stress", 
+            "title": "ランニングエクササイズ", 
+            "typee": "", 
+            "whom": "8"
+        }, 
+        "Purchase": []
+    }, 
+    {
+        "Date": {
+            "date": "2015-10-12 10:19:00", 
+            "id": "16", 
+            "item_id": "30", 
+            "limitt": "7"
+        }, 
+        "Item": {
+            "adress": "出町柳", 
+            "check": "0", 
+            "content": "とにかくみんなで楽しく走ります。", 
+            "date": "2015-10-11 16:00:00", 
+            "id": "30", 
+            "lat": "35.029991", 
+            "limitt": "15", 
+            "lng": "135.772491", 
+            "photo": "141226body_start_running-640x359-82857.jpg", 
+            "photo_dir": "30", 
+            "price": "2000", 
+            "purpose": "stress", 
+            "title": "ランニングエクササイズ", 
+            "typee": "", 
+            "whom": "8"
+        }, 
+        "Purchase": []
+    }
+]

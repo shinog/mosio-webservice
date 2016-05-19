@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteBase /
+   RewriteCond %{REQUEST_URI} !phpMyAdmin/(.*)
+   RewriteCond %{REQUEST_URI} !PayPal-PHP-SDK/(.*)
+   RewriteCond %{REQUEST_URI} !else/(.*)
+   RewriteRule /(.*) falca/$1
+   
+</IfModule>

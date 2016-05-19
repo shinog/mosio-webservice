@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>mosioカレンダー</title>
+
+<style type="text/css">
+.check{background:#F9C;color:#fff;}
+
+h1{margin:0 0 10px;padding:5px;background:#eee;font-size:16px;}
+table{border-spacing:1px;font-size:12px;font-family:Verdana, Geneva, sans-serif;}
+th,td{margin:0;padding:5px;text-align:center;}
+
+#calendar{padding:20px 20px 10px;}
+form{margin:0;padding:0 20px 20px;}
+</style>
+<script src="http://shinog.heteml.jp/liveself.me/design/mail-detail/js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+<p><a href="#" id="month_prev_ajax">前月へ</a>/ <a href="#" id="month_next_ajax">次月へ</a></p>
+<div id="calendar"></div>
+<div id="dateselect"></div>
+<div id="quanselect"></div>
+
+
+<script type="text/javascript">
+
+
+
+//　取得したい年月設定
+var y,m;
+var p = location.search;
+if(p.split("year=").length>1 && p.split("&month=").length>1){
+	y = eval(p.split("year=")[1].split("&")[0]);
+	m = eval(p.split("&month=")[1].split("&")[0]);
+}else{
+	y = new Date().getFullYear();
+	m = new Date().getMonth()+1;
+}
+
+
+function calendar(y,m){
+	
+	// 初期設定	
+	var feb_date = (y%4 == 0 && y%100 != 0)?29:28;
+	if(y%400 == 0){feb_date = 29};
+	var month_count = {1:31,2:feb_date,3:31,4:30,5:31,6:30,7:31,8:31,9:30,10:31,11:30,12:31}
+	var day_en = {d0:"sun",d1:"mon",d2:"the",d3:"wed",d4:"thu",d5:"fri",d6:"sat"};
+	var m_display = (m<10)?"0"+String(m):m;	
+	var last_day = new Date(y,m-1,month_count[m]).getDay();
+	var first_day = new Date(y,m-1,1).getDay();
+	var w = 1;
+	var d = first_day;
+	
+	// マークアップ生成
+	var txt = "";
+	txt += '<h1>' + y + '年' + m + '月のカレンダー</h1>\n';
+	txt += '<table summary="' + y + '年' + m_display + '月のカレンダー" class="calendar month' + m + '">\n';
+	txt += '<tr>\n';
+	txt += '<th>SUN</th>\n';
+	txt += '<th>MON</th>\n';
+	txt += '<th>TUE</th>\n';
+	txt += '<th>WED</th>\n';
+	txt += '<th>THU</th>\n';
+	txt += '<th>FRI</th>\n';
+	txt += '<th>SAT</th>\n';
+	txt += '</tr>\n';
+	txt += '<tr class="week1">\n';
+	for(var j=0;j<first_day;j++){
+		txt += '<td>&nbsp;</td>\n';
+	}
+	for(var i=1;i<=month_count[m];i++){
+		if(d != 0 && (first_day + i)%7 == 1){
+			w++;
+			d = 0;
+			txt += '</tr>\n';	
+			txt += '<tr class="week' + w + '">\n';
+		}
+		var i_display = (i<10)?"0"+String(i):i;
+		
+		day_count = (i%7 == 0)? Math.floor(i/7) : Math.floor(i/7) + 1 ;
+		
+		var cleared = false;
+		var double = false;
+		
+		$.ajaxSetup({ async: false });
+		$.getJSON("data4.json", function(data){
+		$(data).each(function(){
+			var date = this.Date.date;
+			var limit = this.Date.limitt;
+			
+		var ydate = date.slice(0, 4);
+        var mdate = date.slice(5, 7);
+        var ddate = date.slice(8, 10);
+		
+		
+		if(y == ydate && m == mdate && i_display == ddate && !double){
+		txt += '<td id="d' + y + m_display + i_display + '" class="'  + 'check' +  '">' + i + '</td>\n';
+		cleared = true;
+		double = true;
+		}
+			
+		})
+	})
+		
+		
+		
+		if (!cleared) {
+        txt += '<td id="d' + y + m_display + i_display + '" class="' + day_en['d'+d] + day_count + ' date' + i + '">' + i + '</td>\n';
+        }
+		
+		d++;
+	}
+	for(var j=0;j<(6-last_day);j++){
+		txt += '<td>&nbsp;</td>\n';
+	}
+	txt += '</tr>\n';
+	txt += '</table>\n';
+	
+	// 書き出し
+	document.getElementById("calendar").innerHTML = txt;
+}
+window.onload = function(){
+	calendar(y,m);
+	
+	
+	document.getElementById("month_prev_ajax").onclick = function(){
+		m--;
+		if(m==0){y--;m=12;}
+		calendar(y,m);
+		var txt2 = "";
+        var txt3 = "";
+		document.getElementById("dateselect").innerHTML = txt2;
+        document.getElementById("quanselect").innerHTML = txt3;
+		return false;
+	}
+	
+	document.getElementById("month_next_ajax").onclick = function(){
+		m++;
+		if(m==13){y++;m=1;}
+		calendar(y,m);
+		var txt2 = "";
+        var txt3 = "";
+		document.getElementById("dateselect").innerHTML = txt2;
+        document.getElementById("quanselect").innerHTML = txt3;
+		return false;
+	}
+	
+		
+}
+
+
+$(document).on('click', '.check', function(){
+
+var txt2 = "";
+var txt3 = "";
+document.getElementById("quanselect").innerHTML = txt3;
+
+var id = $(this).attr('id');
+var ydat = id.slice(1, 5);
+var mdat = id.slice(5, 7);
+var ddat = id.slice(7, 9);
+
+
+$.ajaxSetup({ async: false });
+		$.getJSON("data4.json", function(data){
+		$(data).each(function(){
+			var date = this.Date.date;
+			var limit = this.Date.limitt;
+			var itemid = this.Date.id;
+			
+		var ydate = date.slice(0, 4);
+        var mdate = date.slice(5, 7);
+        var ddate = date.slice(8, 10);
+		
+		var limit_display = (limit<10)?"0"+String(limit):limit;	
+		
+		if(ydat == ydate && mdat == mdate && ddat == ddate){
+		var time = date.slice(11, 16);
+		txt2 += '<p id="d' + limit_display + '-' + itemid + '" class="select">' + time + '</p>';
+		
+		}
+			
+		})
+	})
+
+document.getElementById("dateselect").innerHTML = txt2;
+});
+
+
+
+$(document).on('click', '.select', function(){
+
+var txt3 = "";
+
+var id2 = $(this).attr('id');
+var itemid2 = id2.slice(3);
+var limit2 = id2.slice(1, 3);
+	
+txt3 += '<p id="d' + itemid2 + '" class="">' + limit2 + '</p>';
+		
+
+document.getElementById("quanselect").innerHTML = txt3;
+});
+
+</script>
+
+
+</body>
+</html>

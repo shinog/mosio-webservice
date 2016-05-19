@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>選択肢によってドロップダウンのメニュー項目を変えるには - サンプル</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="JavaScriptサンプル: 選択肢によってドロップダウンのメニュー項目を変えるには">
+<meta name="keywords" content="JavaScript">
+<meta name="author" content="Content Author: Keisuke Yamamoto">
+<script type = "text/javascript">
+<!--
+function numberchange()
+	{
+		var select1 = document.forms.formName.selectName1; //変数select1を宣言
+		var select2 = document.forms.formName.selectName2; //変数select2を宣言
+		
+		select2.options.length = 0; // 選択肢の数がそれぞれに異なる場合、これが重要
+		
+		if (select1.options[select1.selectedIndex].value == "果物")
+			{
+				select2.options[0] = new Option("りんご");
+				select2.options[1] = new Option("みかん");
+				select2.options[2] = new Option("オレンジ");
+			}
+		
+		if (select1.options[select1.selectedIndex].value == "野菜")
+			{
+				select2.options[0] = new Option("キャベツ");
+				select2.options[1] = new Option("きゅうり");
+				select2.options[2] = new Option("にんんじん");
+				select2.options[3] = new Option("たまねぎ");
+			}
+		
+		
+	}
+
+//-->
+
+
+</script>
+</head>
+
+<body>
+<form name="formName">
+<!--選択肢その1-->
+<select name = "selectName1" onChange="numberchange()">
+<option value = "果物">くだもの</option>
+<option value = "野菜">やさい</option>
+<option value = "肉類">にくるい</option>
+</select>
+
+<!--選択肢その2（選択肢その1の項目によって変化）-->
+<select name = "selectName2">
+</select>
+
+</body>
+</html>

@@ -1,0 +1,453 @@
+@charset "utf-8";
+
+
+/* reset ----------------------------------------------------------*/
+html,body,div,h1,h2,h3,h4,h5,h6,p,blockquote,q,pre,table,caption,colgroup,col,tbody,thead,tfoot,tr,th,td,ul,ol,li,dl,dt,dd,form,fieldset,legend,label,span,a,img,em,ins,del,cite,abbr,sup,sub,dfn,code,var,samp,kbd,object,script,noscript,style,iframe,embed,param,map,area,menu,hr,address,small,strong,i,b,article,aside,figure,footer,header,hgroup,nav,section,figcaption,time,video,audio,mark,ruby,rt,rp,bdo,source,canvas,details,summary,command,datalist,keygen,output,progress,meter {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+address,article,aside,figure,figcaption,footer,header,hgroup,hr,legend,menu,nav,section,summary {
+    display: block;
+}
+
+li {
+    list-style-type: none;
+}
+
+img,
+a img {
+    border: none;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+object,
+object:focus {
+    outline: none;
+}
+
+/* general class ----------------------------------------------------------*/
+.hidden {
+    display: none !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.blue {
+    color: #fff;
+    border-color: #008ecd;
+    background: #008ecd;
+}
+
+.pink {
+    color: #fff;
+    border-color: #f37572;
+    background: #f37572;
+}
+
+/* default ----------------------------------------------------------*/
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    background-color: #e6e6e6;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+    color: #333;
+    font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Arial, Verdana, sans-serif;
+    font-size: 100%;
+    line-height: 1;
+    letter-spacing: 0em;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+i {
+    font-style: normal;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 0;
+}
+
+header, article, footer {
+    width: 500px;
+    margin: 0 auto;
+}
+
+/* form ----------------------------------------------------------*/
+
+button,
+input,
+select,
+textarea {
+    margin: 0;
+    font-size: 100%;
+    vertical-align: middle;
+}
+
+button,
+input {
+    *overflow: visible;
+    line-height: normal;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+button,
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    padding: 10px !important;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"] {
+    display: inline-block;
+    height: 24px;
+    padding: 5px;
+    font-size: 100%;
+    line-height: 24px;
+    color: #333;
+}
+
+textarea,
+input[type="text"],
+input[type="password"] {
+    background-color: #f5f5f5;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: #dfdfdf;
+}
+
+input[type="submit"] {
+    width: auto;
+}
+
+input,
+textarea, {
+    margin-left: 0;
+}
+
+/* button ----------------------------------------------------------*/
+
+.button {
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;  
+    font-size: 95% !important;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+    zoom: 1;
+}
+
+.button.large {
+    width: 250px;
+    height: 42px !important;
+    line-height: 42px !important;
+    margin: 0 auto;
+    display: block;
+    font-size: 90%;
+}
+
+.button.middle {
+    width: 160px !important;
+    height: 42px !important;
+    line-height: 42px !important;
+    margin: 0 auto;
+    display: block;
+    font-size: 90%;
+    padding: 0 2em;
+}
+
+.button.small {
+    height: 22px !important;
+    line-height: 22px !important;  
+    font-size: 80% !important;
+    padding: 0 0.4em;
+}
+
+.button:active,
+.button:hover {
+  box-shadow: inset 0 -40px 5px 0 rgba(70, 70, 70, .1), inset 0 1px 0px 0 rgba(255, 255, 255, .2);
+}
+
+/* textfield ----------------------------------------------------------*/
+
+input[type='text'],
+input[type='password'] {
+  border: none;
+}
+
+input[type='text']:focus,
+input[type='text']:active,
+input[type='password']:focus,
+input[type='password']:active {
+    outline: 0;
+    boder: none;
+}
+
+/* textarea ----------------------------------------------------------*/
+
+textarea {
+  border: none;
+  
+  /* default */
+  width: 90%;
+  height: 8em;
+}
+
+textarea:focus,
+textarea:active {
+    outline: 0;
+    border: none;
+}
+
+/* message ------------------------------------------------------------*/
+
+.message {
+    display: block;
+    margin: 20px auto;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    zoom: 1;  
+    width: 500px;
+    position: relative;
+    top: 120px;
+    left: 0px;
+
+}
+
+.message p {
+    font-size: 96%;
+    padding: 15px;
+}
+
+.message ul {
+    font-size: 86%;
+    margin-left: 24px;
+    padding: 0 15px 15px;
+}
+
+.message ul li {
+    list-style-type: disc;
+    line-height: 1.8em;
+}
+
+
+/* header ------------------------------------------------------------*/
+
+header {
+    background: url('../img/header_img_cake.gif') center top no-repeat;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 110%;
+    margin: 0 auto;
+    position: relative;  
+    top: 80px;  
+    left: 190px; 
+}
+
+
+header #form {
+    font-size: 100%;
+    background: #fff;
+    width: 460px;
+    margin: 140px auto 0;
+    padding: 15px 20px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; 
+}
+
+header #form .field {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+header #form .field .label {
+    width: 42px;
+    height: 2em;
+    text-align: right;
+    line-height: 2em;
+}
+
+header #form .text {
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+
+header #form #PostName {
+    width: 40%;
+}
+
+header #form #PostTitle {
+    width: 87%;
+}
+
+header #form #PostBody {
+    width: 96%;
+}
+
+header #form p{
+    font-size: 80%;
+    margin: 30px auto 0;
+    line-height: 1.6em;
+    text-align: center;
+}
+
+/* submit */
+
+header #form .field-submit {
+    position: relative;
+    width: 280px;
+    margin: 10px auto 0;
+    vertical-align: middle;
+}
+
+header #form .field-submit #PostPassword,
+header #form .field-submit #PostEditPassword,
+header #form .field-submit #PostDeletePassword {
+    width: 24%;
+    position: absolute;
+    top: 5px;
+    left: 30px;
+}
+header #form .field-submit .passfont {
+    font-size:70%;
+    position:relative;
+    top:12px;
+}
+
+/* article ----------------------------------------------------------*/
+
+article {
+    margin-top: 20px;
+}
+
+article section{
+    background-color: #f7f7f7;
+    position: relative;
+    padding: 15px; 
+    margin-bottom: 20px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; 
+}
+
+article section h2 {
+    padding-right: 120px;
+    margin-bottom: 35px;
+    font-size: 95%;
+    font-weight: bold;
+}
+
+article section p {
+    color: #333;
+    font-size: 90%;
+}
+
+article section p.author {
+    color: #555;
+    font-size: 90%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+article section p.tools {
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* footer ----------------------------------------------------------*/
+
+footer {
+    margin-top: 130px;
+    margin-bottom: 80px;
+    text-align: center;
+}

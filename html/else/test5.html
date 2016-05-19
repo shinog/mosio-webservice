@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Javascriptでカレンダーを作ってみた（基本）</title>
+<style type="text/css">
+.check{background:#F9C;color:#fff;}
+</style>
+<script src="http://shinog.heteml.jp/liveself.me/design/mail-detail/js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+var testdate = ['2015-10-08 18:04:00', '2015-10-15 18:04:00', '2015-11-25 18:04:00', '2015-10-25 18:04:00'];
+
+//　取得したい年月設定（とりあえずPC時間の今日の年月）
+var y = new Date().getFullYear();
+var m = new Date().getMonth()+1;
+
+// 初期設定	
+var feb_date = (y%4 == 0 && y%100 != 0)?29:28;
+if(y%400 == 0){feb_date = 29};
+var month_count = {1:31,2:feb_date,3:31,4:30,5:31,6:30,7:31,8:31,9:30,10:31,11:30,12:31}
+var day_en = {d0:"sun",d1:"mon",d2:"the",d3:"wed",d4:"thu",d5:"fri",d6:"sat"};
+var m_display = (m<10)?"0"+String(m):m;
+var last_day = new Date(y,m-1,month_count[m]).getDay();
+var first_day = new Date(y,m-1,1).getDay();
+var w = 1;
+var d = first_day;
+
+// マークアップ生成
+var txt = "";
+txt += '<h1>' + y + '年' + m_display + '月のカレンダー</h1>\n';
+txt += '<table summary="' + y + '年' + m_display + '月のカレンダー" class="calendar month' + m + '">\n';
+txt += '<tr>\n';
+txt += '<th>SUN</th>\n';
+txt += '<th>MON</th>\n';
+txt += '<th>TUE</th>\n';
+txt += '<th>WED</th>\n';
+txt += '<th>THU</th>\n';
+txt += '<th>FRI</th>\n';
+txt += '<th>SAT</th>\n';
+txt += '</tr>\n';
+txt += '<tr class="week1">\n';
+for(var j=0;j<first_day;j++){
+	txt += '<td>&nbsp;</td>\n';
+}
+for(var i=1;i<=month_count[m];i++){
+	if(d != 0 && (first_day + i)%7 == 1){
+		w++;
+		d = 0;
+		txt += '</tr>\n';	
+		txt += '<tr class="week' + w + '">\n';
+	}
+	var i_display = (i<10)?"0"+String(i):i;
+	
+	day_count = (i%7 == 0)? Math.floor(i/7) : Math.floor(i/7) + 1 ;
+	
+	var cleared = false;
+		for(var k in testdate){
+        var ydate = testdate[k].slice(0, 4);
+        var mdate = testdate[k].slice(5, 7);
+        var ddate = testdate[k].slice(8, 10);
+		
+		if(y == ydate && m == mdate && i_display == ddate){
+		txt += '<td id="d' + y + m_display + i_display + '" class="'  + 'check' +  '">' + i + '</td>\n';
+		cleared = true;
+		}
+		}
+		
+		if (!cleared) {
+	txt += '<td id="d' + y + m_display + i_display + '" class="' + day_en['d'+d] + day_count + ' date' + i + '">' + i + '</td>\n';
+	}
+	d++;
+}
+for(var j=0;j<(6-last_day);j++){
+	txt += '<td>&nbsp;</td>\n';
+}
+txt += '</tr>\n';
+txt += '</table>\n';
+
+// 書き出し
+document.write(txt);
+
+$(function(){
+    $('.check').on('click', function(){
+        $('#test').addClass('check');
+    });
+});	
+</script>
+
+<div id="test">この日程はレッスンを受けられます。</div>
+</body>
+</html>

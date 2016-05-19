@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>サンプル</title>
+
+  </head>
+  <body>
+<script type="text/javascript">
+
+var testdate = ['2015-10-08 18:04:00', '2015-10-15 18:04:00', '2015-10-25 18:04:00'];
+for(var i in testdate){
+var ydate = testdate[i].slice(0, 4);
+var mdate = testdate[i].slice(5, 7);
+var ddate = testdate[i].slice(8, 10);
+document.write(ddate+'<br/>');
+}
+ 
+</script> 
+<br/>
+<br/>
+<script type = "text/javascript">
+// 連想配列の中に連想配列
+var arr = {
+    php: {key_a1: 'WordPress', key_a2: 'EC-CUBE', key_a3: 'ZenCart'},
+    js:  {key_b1: 'jQuery', key_b2: 'jQueryUI', key_b3: 'jQueryMobile'}
+};
+//ループ
+for(var k in arr){
+    var v = arr[k]; // 値をコピー
+    document.write(k); //出力：php などのキー名
+    for(var k2 in v){
+        var v2 = arr[k][k2];
+        document.write(k2); // 出力：key_a1 などのキー名
+        document.write(v2); // 出力：WordPress などの値
+    }
+}
+</script> 
+<br/>
+<script type = "text/javascript">
+// 配列の中に連想配列
+var arr = [
+    {key_a1: 'WordPress', key_a2: 'EC-CUBE', key_a3: 'ZenCart'},
+    {key_b1: 'jQuery', key_b2: 'jQueryUI', key_b3: 'jQueryMobile'}
+];
+ 
+for(var k in arr){
+    var v = arr[k]; // 値をコピー
+    for(var k2 in v){
+        var v2 = arr[k][k2]; 
+        document.write(k2); // 出力：key_a1 などのキー名
+        document.write(v2); // 出力：WordPress などの値
+    }
+}
+</script> 
+  </body>
+</html>

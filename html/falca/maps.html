@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Google Maps API ver 3 Sample/グーグルマップAPIサンプル/Google Maps API样品</title>
+<link rel="stylesheet" href="css/main.css" type="text/css" media="all">
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDjCAJc91N9S-LR9w3cT1fvYxaigPW1Pr4&sensor=false" type="text/javascript"></script>
+</head>
+<body>
+<div id="gmap"></div>
+<script type="text/javascript">
+var map = new google.maps.Map(
+document.getElementById("gmap"),{
+zoom : 10,
+center : new google.maps.LatLng(0,0),
+mapTypeId : google.maps.MapTypeId.ROADMAP
+}
+);
+// KML読み込み表示
+var ctime = (new Date()).getTime();
+var myKMLLayer = new google.maps.KmlLayer("http://www.openspc2.org/reibun/Google/Maps/API/ver3/code/map/KML/0001/sample/station.kml?t="+ctime);
+myKMLLayer.setMap(map);
+</script>
+</body>
+</html>

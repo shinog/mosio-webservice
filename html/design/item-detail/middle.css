@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@media (min-width: 451px) and (max-width: 869px){
+.img-middle {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+}
+}
+
+@media (min-width: 451px) and (max-width: 869px){
+}

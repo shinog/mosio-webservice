@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jQuery TIPS</title>
+</head>
+<body>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+$(function() {
+  // 処理対象のオブジェクト配列
+  var members = [
+    { name: '山田理央', age: 17, sex: 'female' },
+    { name: '鈴木真琴', age: 24, sex: 'male' },
+    { name: '佐藤健一', age: 45, sex: 'male' },
+    { name: '木下奈美', age: 29, sex: 'female' },
+    { name: '天童赤根', age: 35, sex: 'female' }
+  ];
+
+  // 配列membersの内容を順に走査
+  var filtered = $.grep(members,
+    function(elem, index) {
+      // ageプロパティの値でフィルター
+      return (elem.age > 30);
+    }
+  );
+
+  console.log(filtered);  // フィルター後の結果
+});
+</script>
+</body>
+</html>
